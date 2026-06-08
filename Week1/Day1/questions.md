@@ -116,6 +116,8 @@ Questions:
 * What happens internally when we import a module?
 * Why is Python slower than C/C++?
 * What makes notebooks useful for data science?
+* What is module?
+* What is the difference between function and methods?
 
 Status:
 
