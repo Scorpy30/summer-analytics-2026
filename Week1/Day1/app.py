@@ -261,4 +261,22 @@ print(x != 0 and (10 / x))
 print(True or False)
 
 
+# -------------------------------------------
+
+# For..else
+
+# -------------------------------------------
+
+successful = False
+for _ in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break
+else:
+    print("Attempted 3 times and failed")
+
+# in the above example try running it with successful = True and observe the difference
+# else block executes only when the loop does not exit early
+
 print("\nWeek 1 Day 1 Complete")
