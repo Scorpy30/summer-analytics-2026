@@ -1,0 +1,38 @@
+name: Auto Update Progress Badge
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows you to run it manually from GitHub if needed
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Calculate Completed Days
+        id: calc
+        run: |
+          # Counts how many 'notes.md' files exist inside any Week/Day directory
+          COMPLETED_DAYS=$(find . -path "./Week*/Day*/notes.md" | wc -l)
+          TOTAL_DAYS=30
+          
+          # Calculate percentage math
+          PERCENTAGE=$(( (COMPLETED_DAYS * 100) / TOTAL_DAYS ))
+          if [ $PERCENTAGE -gt 100 ]; then PERCENTAGE=100; fi
+          
+          echo "percent=$PERCENTAGE" >> $GITHUB_OUTPUT
+
+      - name: Generate Progress JSON
+        run: |
+          echo '{"schemaVersion": 1, "label": "Course Progress", "message": "${{ steps.calc.outputs.percent }}%", "color": "blue"}' > progress.json
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add progress.json
+          git diff --quiet && git diff --cached --quiet || (git commit -m "🤖 Auto-updated progress badge" && git push)

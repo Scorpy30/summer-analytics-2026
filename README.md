@@ -2,6 +2,9 @@
 
 This repository contains my weekly learning notes, practice code, notebooks, and GitHub activity for the 6-week Summer Analytics course.
 
+### 📊 Course Progress Dashboard
+![Course Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/main/progress.json)
+
 # 🚀 Data Science Learning Roadmap
 
 <details>
