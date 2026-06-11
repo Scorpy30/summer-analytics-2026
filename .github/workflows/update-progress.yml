@@ -13,22 +13,45 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Calculate Completed Days
+      - name: Calculate Progress Matrix
         id: calc
         run: |
-          COMPLETED_DAYS=$(find . -path "./Week*/Day*/notes.md" | wc -l)
+          # 1. Total Course Progress Calculation
+          TOTAL_COMPLETED=$(find . -path "./Week*/Day*/notes.md" | wc -l)
           TOTAL_DAYS=30
-          PERCENTAGE=$(( (COMPLETED_DAYS * 100) / TOTAL_DAYS ))
-          if [ $PERCENTAGE -gt 100 ]; then PERCENTAGE=100; fi
-          echo "percent=$PERCENTAGE" >> $GITHUB_OUTPUT
+          OVERALL_PCT=$(( (TOTAL_COMPLETED * 100) / TOTAL_DAYS ))
+          if [ $OVERALL_PCT -gt 100 ]; then OVERALL_PCT=100; fi
+          echo "overall=$OVERALL_PCT" >> $GITHUB_OUTPUT
 
-      - name: Generate Progress JSON
-        run: |
-          echo '{"schemaVersion": 1, "label": "Course Progress", "message": "${{ steps.calc.outputs.percent }}%", "color": "blue"}' > progress.json
+          # 2. Function to calculate individual weekly progress (5 days per week)
+          calc_week() {
+            local week_num=$1
+            # Day 0 to Day 5 can exist, but let's safely scale based on 5 core items logged
+            local count=$(find . -path "./Week${week_num}/Day*/notes.md" | wc -l)
+            local pct=$(( (count * 100) / 5 ))
+            if [ $pct -gt 100 ]; then pct=100; fi
+            
+            # Determine badge color dynamically
+            local color="red"
+            if [ $pct -eq 100 ]; then color="brightgreen"; elif [ $pct -gt 0 ]; then color="orange"; fi
+            
+            echo "{\"schemaVersion\": 1, \"label\": \"Week ${week_num}\", \"message\": \"${pct}%\", \"color\": \"${color}\"}" > progress-week${week_num}.json
+          }
+
+          # Execute calculation loop for all 6 weeks
+          calc_week 1
+          calc_week 2
+          calc_week 3
+          calc_week 4
+          calc_week 5
+          calc_week 6
+
+          # Generate the core overall progress JSON 
+          echo "{\"schemaVersion\": 1, \"label\": \"Course Progress\", \"message\": \"${OVERALL_PCT}%\", \"color\": \"blue\"}" > progress.json
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add progress.json
-          git diff --quiet && git diff --cached --quiet || (git commit -m "🤖 Auto-updated progress badge" && git push origin master)
+          git add progress.json progress-week*.json
+          git diff --quiet && git diff --cached --quiet || (git commit -m "🤖 Auto-updated weekly progress badges" && git push origin master)
