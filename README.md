@@ -3,16 +3,16 @@
 This repository contains my weekly learning notes, practice code, notebooks, and GitHub activity for the 6-week Summer Analytics course.
 
 ### 📊 Course Progress Dashboard
-![Overall Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress.json)
+![Overall Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress.json&maxAge=0)
 
 | Week | Status Badge |
 | :--- | :--- |
-| **Week 1** | ![Week 1 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week1.json) |
-| **Week 2** | ![Week 2 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week2.json) |
-| **Week 3** | ![Week 3 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week3.json) |
-| **Week 4** | ![Week 4 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week4.json) |
-| **Week 5** | ![Week 5 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week5.json) |
-| **Week 6** | ![Week 6 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week6.json) |
+| **Week 1** | ![Week 1 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week1.json&maxAge=0) |
+| **Week 2** | ![Week 2 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week2.json&maxAge=0) |
+| **Week 3** | ![Week 3 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week3.json&maxAge=0) |
+| **Week 4** | ![Week 4 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week4.json&maxAge=0) |
+| **Week 5** | ![Week 5 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week5.json&maxAge=0) |
+| **Week 6** | ![Week 6 Progress](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Scorpy30/summer-analytics-2026/master/progress-week6.json&maxAge=0) |
 
 # 🚀 Data Science Learning Roadmap
 
