@@ -197,7 +197,7 @@ This repository contains my weekly learning notes, practice code, notebooks, and
         <a href="https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4">KNN Blog</a>
       </td>
       <td><a href="https://www.youtube.com/watch?v=CQveSaMyEwM">KNN implementation</a></td>
-      <td>
+      <td rowspan = "3", valign = "top">
         <b>Fundamentals of Process Mining</b><br>
         <sub>🔴 REQUIRED FOR PROJECT</sub><br>
         Complete this task during Days 3–5. Building on the Introduction to Process Mining course, this learning path covers the key concepts and workflows used in Celonis. These fundamentals are required for the upcoming project and will help you get the most out of the hands-on activities.<br><br>
@@ -212,7 +212,6 @@ This repository contains my weekly learning notes, practice code, notebooks, and
         <a href="https://www.youtube.com/watch?v=H3EjCKtlVog">Gaussian Naive Bias</a><br><br>
         <a href="https://www.youtube.com/watch?v=nHIUYwN-5rM">Naive Bias implementation</a>
       </td>
-      <td>-</td>
     </tr>
     <tr>
       <td><b>Day 5</b></td>
@@ -225,7 +224,6 @@ This repository contains my weekly learning notes, practice code, notebooks, and
         <a href="https://www.youtube.com/watch?v=Qc5IyLW_hns">SVM 3</a><br><br>
         <a href="https://www.youtube.com/watch?v=FB5EdxAGxQg&t=1270s">SVM Implementation</a>
       </td>
-      <td>-</td>
     </tr>
   </tbody>
 </table>
