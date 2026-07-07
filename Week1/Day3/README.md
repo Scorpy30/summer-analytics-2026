@@ -50,7 +50,7 @@ Learn core Pandas operations for working with tabular data while developing intu
 * questions.md
 
 ## Practice
-- [Kaggle Pandas Microcourse]()
+- [Kaggle Pandas Microcourse](./pandas_microcourse/)
 - [Kaggle Pandas Notebook](https://www.kaggle.com/code/nalingoel/pandas)
 
 ## Status
